@@ -1,10 +1,13 @@
-package org.salesianos.dam.apimonumentos.apimonumentos.model;
+package org.salesianos.dam.apimonumentos.apimonumentos;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Map;
 
 @Entity
 @Data
@@ -13,11 +16,13 @@ import lombok.NoArgsConstructor;
 public class Monumento {
 
     @Id
-    private Float id;
+    @GeneratedValue
+    private Long id;
     private String codPais;
-    private String ciudad;
     private String pais;
-    private Map<Long, Long> localizacion;
+    private String ciudad;
+    private Double latitud;
+    private Double longitud;
     private String nomMonumento;
     private String descripcion;
     private String imagen;

@@ -1,0 +1,137 @@
+### GET - Obtener todos los monumentos
+
+GET http://localhost:8080/monumento
+
+
+### GET - Obtener monumento por ID
+
+GET http://localhost:8080/monumento/1
+
+
+### GET - ID que no existe -> 404
+
+GET http://localhost:8080/monumento/999
+
+
+### POST - Crear monumento
+
+POST http://localhost:8080/monumento
+Content-Type: application/json
+
+{
+  "codPais": "ES",
+  "pais": "España",
+  "ciudad": "Sevilla",
+  "latitud": 37.3861,
+  "longitud": -5.9928,
+  "nomMonumento": "La Giralda",
+  "descripcion": "Campanario de la Catedral de Sevilla.",
+  "imagen": "https://ejemplo.com/giralda.jpg"
+}
+
+
+### POST - Crear
+
+POST http://localhost:8080/monumento
+Content-Type: application/json
+
+{
+  "codPais": "FR",
+  "pais": "Francia",
+  "ciudad": "París",
+  "latitud": 48.8584,
+  "longitud": 2.2945,
+  "nomMonumento": "Torre Eiffel",
+  "descripcion": "Monumento situado en París.",
+  "imagen": "https://ejemplo.com/torre-eiffel.jpg"
+}
+
+
+### POST - Crear tercer monumento
+
+POST http://localhost:8080/monumento
+Content-Type: application/json
+
+{
+  "codPais": "IT",
+  "pais": "Italia",
+  "ciudad": "Roma",
+  "latitud": 41.8902,
+  "longitud": 12.4922,
+  "nomMonumento": "Coliseo Romano",
+  "descripcion": "Antiguo anfiteatro romano situado en Roma.",
+  "imagen": "https://ejemplo.com/coliseo.jpg"
+}
+
+
+### POST - Nombre vacío -> 400
+
+POST http://localhost:8080/monumento
+Content-Type: application/json
+
+{
+  "codPais": "ES",
+  "pais": "España",
+  "ciudad": "Madrid",
+  "latitud": 40.4168,
+  "longitud": -3.7038,
+  "nomMonumento": "",
+  "descripcion": "Prueba de error.",
+  "imagen": "https://ejemplo.com/prueba.jpg"
+}
+
+
+### PUT - Actualizar monumento
+
+PUT http://localhost:8080/monumento/1
+Content-Type: application/json
+
+{
+  "codPais": "ES",
+  "pais": "España",
+  "ciudad": "Sevilla",
+  "latitud": 37.3861,
+  "longitud": -5.9928,
+  "nomMonumento": "La Giralda de Sevilla",
+  "descripcion": "Campanario de la Catedral de Sevilla actualizado.",
+  "imagen": "https://ejemplo.com/giralda-nueva.jpg"
+}
+
+
+### PUT - ID inexistente -> 404
+
+PUT http://localhost:8080/monumento/999
+Content-Type: application/json
+
+{
+  "codPais": "ES",
+  "pais": "España",
+  "ciudad": "Sevilla",
+  "latitud": 37.3861,
+  "longitud": -5.9928,
+  "nomMonumento": "Monumento inexistente",
+  "descripcion": "Prueba de error.",
+  "imagen": "https://ejemplo.com/prueba.jpg"
+}
+
+
+### PUT - Nombre vacío -> 400
+
+PUT http://localhost:8080/monumento/1
+Content-Type: application/json
+
+{
+  "codPais": "ES",
+  "pais": "España",
+  "ciudad": "Sevilla",
+  "latitud": 37.3861,
+  "longitud": -5.9928,
+  "nomMonumento": "",
+  "descripcion": "Prueba de error.",
+  "imagen": "https://ejemplo.com/prueba.jpg"
+}
+
+
+### DELETE
+
+DELETE http://localhost:8080/monumento/1
